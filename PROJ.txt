@@ -1,0 +1,70 @@
+import java.io.*
+
+
+fun  user1(){
+    val filename = "user1.txt"
+    val ids="admin"
+    val pas="12345678901"
+    println("enter id")
+    val id = readLine()
+    println("enter password")
+    val pass =readLine()
+    if(id==ids)
+
+        if(pas==pass)
+            print("enter file name")
+    val fi = readLine()
+    if(fi==filename)
+        try{
+            val line:List<String> = File(filename).readLines()
+            line.forEach{line -> println(line) }
+        }catch(e:Exception){
+            e.printStackTrace()
+        }finally {
+            println("done!")
+        }
+    println("wrong passcode ")
+
+}
+
+fun user2(){
+    val filename = "user2.txt"
+    val ids="student"
+    val pas="246802"
+    println("enter id")
+    val id = readLine()
+    println("enter password")
+    val pass =readLine()
+    if(id==ids)
+
+        if(pas==pass)
+
+            print("enter file name")
+        val fi = readLine()
+        if(fi==filename)
+            try{
+                val line:List<String> = File(filename).readLines()
+                line.forEach{line -> println(line) }
+        }catch(e:Exception){
+            e.printStackTrace()
+        }finally {
+            println("done!")
+        }
+    println("wrong passcode ")
+}
+
+fun main(args: Array<String>)
+{
+    println("Hello welcome to lib management system ")
+    println("1. USER 1 ")
+    println("2. USER 2 ")
+    val number = Integer.valueOf(readLine())
+    when(number)
+    {
+        1 -> user1();
+        2 -> user2();
+        else ->System.out.println("Invalid number");
+    }
+}
+
+
